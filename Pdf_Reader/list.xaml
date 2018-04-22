@@ -1,0 +1,39 @@
+﻿<Page x:Class="Pdf_Reader.list"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Pdf_Reader"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="list" Background="#3d3d3d">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35"></RowDefinition>
+                <RowDefinition Height="60"></RowDefinition>
+                <RowDefinition Height="120"></RowDefinition>
+                <RowDefinition Height="35"></RowDefinition>
+                <RowDefinition Height="35"></RowDefinition>
+                <RowDefinition Height="60"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" FontSize="20" FontWeight="ExtraBold" Foreground="#e67e22">List Uploaded PDF:</Label>
+            <Button Grid.Row="1" Margin="10" BorderThickness="0" Width="75" HorizontalAlignment="Left" Background="#2ecc71" Foreground="White" Click="Button_Click_1">View</Button>
+            <ScrollViewer Grid.Row="2"  HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                <DataGrid Name="dgrid" Width="170" HorizontalAlignment="Left" Margin="10,0,0,0" ColumnWidth="*" Visibility="Hidden" Grid.Row="2" />
+            </ScrollViewer>
+            <Label FontWeight="Medium" Grid.Row="3" Foreground="White">Enter file Id:</Label>
+            <TextBox Name="tb" Grid.Row="4" Width="200" HorizontalAlignment="Left" Margin="5,0,0,0"></TextBox>
+            <Button HorizontalAlignment="Left" BorderThickness="0" Background="Red" Foreground="White" Grid.Row="5" Margin="10" Width="75" Click="Button_Click">Read</Button>
+        </Grid>
+        <ScrollViewer Grid.Column="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+        <WebBrowser Name="webbrow" Visibility="Hidden" Grid.Column="1" Margin="10"></WebBrowser>
+        </ScrollViewer>
+    </Grid>
+    
+</Page>
